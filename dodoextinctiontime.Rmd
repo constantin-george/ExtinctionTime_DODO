@@ -2,7 +2,9 @@
 title: "Estimating time of extinction using an optimal linear estimator"
 author: "C. George Glen"
 date: '2022-04-09'
-output: html_document
+output:
+  html_document: default
+  pdf_document: default
 ---
 
 ```{r setup, include=FALSE}
