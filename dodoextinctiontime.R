@@ -48,14 +48,14 @@ OLE <- function(data, alpha){
 	upperCI <- max(obs) + ((max(obs)-min(obs))/(SU-1)) ## upper confidence interval
 	
 	## ---------------------------------------------------------------
-	## calculates the time of extinction
+	## compute time of extinction
 	## ---------------------------------------------------------------
-	extest <- sum(t(a)%*%obs)
+	extincttime <- sum(t(a)%*%obs)
 	
 	## ---------------------------------------------------------------
-	## put the results into a data from
+	## return a dataframe
 	## ---------------------------------------------------------------
-	res <- data.frame(Estimate=extest, lowerCI=lowerCI, upperCI=upperCI)
+	res <- data.frame(Estimate=extincttime, lowerCI=lowerCI, upperCI=upperCI)
 	
 	##return the results
 	return(res)

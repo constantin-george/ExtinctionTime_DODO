@@ -463,14 +463,14 @@ computed as</p>
     upperCI &lt;- max(obs) + ((max(obs)-min(obs))/(SU-1)) ## upper confidence interval
     
     ## ---------------------------------------------------------------
-    ## calculates the time of extinction
+    ## compute time of extinction
     ## ---------------------------------------------------------------
-    extest &lt;- sum(t(a)%*%obs)
+    extincttime &lt;- sum(t(a)%*%obs)
     
     ## ---------------------------------------------------------------
-    ## put the results into a data from
+    ## return a dataframe
     ## ---------------------------------------------------------------
-    res &lt;- data.frame(Estimate=extest, lowerCI=lowerCI, upperCI=upperCI)
+    res &lt;- data.frame(Estimate=extincttime, lowerCI=lowerCI, upperCI=upperCI)
     
     ##return the results
     return(res)
