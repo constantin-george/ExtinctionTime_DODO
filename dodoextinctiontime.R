@@ -33,7 +33,8 @@ OLE <- function(data, alpha){
 	
 	## Λ is the symmetric k x k matrix with typical element
 	lambda <- compute.lambda(obs, v)
-	lambda <- ifelse(lower.tri(lambda), lambda, t(lambda)) # make symmetric
+	## make the Λ matrix symmetric
+	lambda <- ifelse(lower.tri(lambda), lambda, t(lambda)) 
 	
 	## vector of weights is given by: a = (e^t * Λ^-1 * e)^-1 * Λ^-1*e
 	a      <- as.vector(solve(t(e) %*% solve(lambda) %*% e)) * solve(lambda) %*% e
